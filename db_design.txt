@@ -1,0 +1,210 @@
+Superadmin Role:
+
+groups:
+id int(11) auto_increment primary_key,
+name varchar(255),
+description text,
+row_status tinyint(1) DEFAULT '0' COMMENT '0-Active Record,1-Delete Record',
+time_created datetime,
+time_updated timestamp,
+requested_by int(11) DEFAULT '0'
+
+group_values:
+id int(11),
+group_id int(11),
+name varchar(255),
+description text,
+class_name varchar(255),
+row_status tinyint(1) COMMENT '0-Active Record,1-Delete Record',
+time_created datetime,
+time_updated timestamp,
+requested_by int(11) DEFAULT '0'
+
+users:
+id int(11) auto_increment primary_key, 
+user_name varchar(255), 
+email varchar(200), 
+password varchar(255), 
+user_type int(11), 
+last_login_date datetime, 
+time_created datetime, 
+time_updated timestamp, 
+row_status tinyint(1), 
+requested_by int(11)
+
+admin:
+id int(11) auto_increment primary_key, 
+user_id int(11), 
+first_name varchar(255), 
+last_name varchar(255),
+address varchar(255), 
+phone_number varchar(20), 
+email_id varchar(225), 
+gender varchar(10)
+
+roles:
+ id, role_name 
+
+skills:
+id int(11) auto_increment primary_key, 
+name varchar(255), 
+row_status tinyint(1), 
+time_created datetime, 
+time_updated timestamp, 
+requested_by int(11)
+
+location:
+id int(11) auto_increment primary_key, 
+name varchar(255), 
+row_status tinyint(1), 
+time_created datetime, 
+time_updated timestamp, 
+requested_by int(11)
+
+salary:
+id int(11) auto_increment primary_key, 
+name varchar(255), 
+row_status tinyint(1), 
+time_created datetime, 
+time_updated timestamp, 
+requested_by int(11)
+
+qualification:
+id int(11) auto_increment primary_key, 
+name varchar(255), 
+row_status tinyint(1), 
+time_created datetime, 
+time_updated timestamp, 
+requested_by int(11)
+
+Institutes:
+id int(11) auto_increment primary_key, 
+name varchar(255), 
+row_status tinyint(1), 
+time_created datetime, 
+time_updated timestamp, 
+requested_by int(11)
+
+board:
+id int(11) auto_increment primary_key, 
+name varchar(255), 
+row_status tinyint(1), 
+time_created datetime, 
+time_updated timestamp, 
+requested_by int(11)
+
+job Indutries:
+id int(11) auto_increment primary_key, 
+name varchar(255), 
+row_status tinyint(1), 
+time_created datetime, 
+time_updated timestamp, 
+requested_by int(11)
+Ads:
+id int(11) auto_increment primary_key, 
+name varchar(255), 
+row_status tinyint(1), 
+time_created datetime, 
+time_updated timestamp, 
+requested_by int(11)
+
+=====================
+Jobprovider Role:
+-----------------------
+
+jobprovider:
+id int(11) auto_increment primary_key, 
+user_id int(11),
+company_name varchar(255), 
+profile_description text, 
+establishment_date date, 
+company_website_url varchar(255), 
+company_image varchar(255)
+
+job_post:
+id int(11) auto_increment primary_key, 
+company_id int(11), 
+job_location int(11),
+job_skill int(11),
+job_type int(11),
+row_status tinyint(1), 
+time_created datetime, 
+time_updated timestamp, 
+requested_by int(11)
+
+job_type:
+id int(11) auto_increment primary_key, 
+type COMMENT 'full time,part time,freelancer', 
+row_status tinyint(1), 
+time_created datetime, 
+time_updated timestamp, 
+requested_by int(11)
+
+job_timeline:
+id int(11) auto_increment primary_key, 
+job_post_id int(11), 
+apply_date date
+
+job_post_skills:
+id int(11) auto_increment primary_key, 
+job_post_id int(11), 
+skill_set_id int(11), 
+skill_level	int(11)
+
+=========================
+JobSeeker Role:
+------------------
+jobseekers:
+id int(11) auto_increment primary_key,
+user_id int(11),
+first_name varchar(255), 
+last_name varchar(255), 
+father_name varchar(255), 
+address varchar(255), 
+phone_number varchar(20), 
+email_id varchar(255), 
+gender varchar(20), 
+qualification varchar(255),  
+current_salary int(11),
+
+education_details:
+id int(11) auto_increment primary_key, 
+user_id int(11),
+certificate_degree_name varchar(255),
+major varchar(255),
+institute_university_name varchar(255),
+statrting_date date, 
+completion_date test,
+percentage int(11),
+
+experiance_details:
+id int(11) primary_key, 
+user_id int(11), 
+experiance_type int(11),
+total_experiance_year(11),
+total_experiance_months(11),
+current_annual_salary_lakhs(11),
+current_annual_salary_thousands(11),
+job_title varchar(150),
+company_name varchar(150),
+industries int(11) 
+start_month int(11),
+strat_year int(11), 
+end_month int(11), 
+end_year int(11),
+job_location_city int(11), 
+job_location_state(11),
+job_location_country(11),
+desctiption(250)
+
+jobseeker_skills:
+id int(11), 
+user_id int(11), 
+skill_id int(11), 
+skill_level int(11),
+skill_experiance int(11),
+
+
+send message(mail)
+
+
